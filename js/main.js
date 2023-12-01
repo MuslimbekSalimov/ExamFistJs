@@ -67,7 +67,7 @@ for (let jk = 0; jk < elButton.length; jk++) {
     elButton[jk].addEventListener('click', function(evt) {
         if (evt.target.dataset.uuid == 'close'){
             coun += 1 
-            evt.target.dataset.uuid == 'open'
+            evt.target.dataset.uuid = 'open'
         }else if (evt.target.dataset.uuid = 'open') {
             coun -= 0
             evt.target.dataset.uuid = 'close'
