@@ -69,7 +69,7 @@ for (let jk = 0; jk < elButton.length; jk++) {
             coun += 1 
             evt.target.dataset.uuid = 'open'
         }else if (evt.target.dataset.uuid = 'open') {
-            coun -= 0
+            coun -= -1
             evt.target.dataset.uuid = 'close'
         }
     })
