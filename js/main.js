@@ -1,6 +1,5 @@
 let elList = document.querySelector(".list");
 let elText = document.querySelector(".headerText");
-let coun = 0;
 
 function pokemonGo(__pokemons) {
     for (let i = 0; i < pokemons.length; i++) {
@@ -42,7 +41,7 @@ function pokemonGo(__pokemons) {
         newText.textContent = __pokemons[i].type;
         newStrong0.textContent = __pokemons[i].height;
         newStrong1.textContent = __pokemons[i].weight;
-
+        
         newLi.appendChild(newImg);
         newLi.appendChild(newHr);
         newLi.appendChild(newHeading);
@@ -50,27 +49,44 @@ function pokemonGo(__pokemons) {
         newLi.appendChild(newStrong1);
         newLi.appendChild(newStrong0);
         newLi.appendChild(newButton);
-        newButton.append(newLike)
+        newButton.appendChild(newLike)
         elList.appendChild(newLi)
     }
 }
 
 pokemonGo(pokemons)
 
+
+// Like
+
 let elButton = document.querySelectorAll(".button");
+let coun = 0;
 
 setInterval(function add(){
     elText.textContent = coun
-},10)
+},100)
 
 for (let jk = 0; jk < elButton.length; jk++) {
     elButton[jk].addEventListener('click', function(evt) {
-        if (evt.target.dataset.uuid == 'close'){
-            coun += 1 
+        if (evt.target.dataset.uuid == 'close') {
+            coun += -1 
             evt.target.dataset.uuid = 'open'
-        }else if (evt.target.dataset.uuid = 'open') {
+        } else if (evt.target.dataset.uuid = 'open') {
             coun -= -1
             evt.target.dataset.uuid = 'close'
         }
     })
 }
+
+
+// for ( let i = 0 ; i < elButton.length; i++){
+//     elButton[i].addEventListener('click', function(evt){
+//       if (evt.target.dataset.uuid == 'close') {
+//         coun += 1
+//         evt.target.dataset.uuid = "open"
+//       }else if (evt.target.dataset.uuid == 'open'){
+//         coun -= 1
+//         evt.target.dataset.uuid = 'close' 
+//       }
+//     })
+//   }
